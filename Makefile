@@ -26,9 +26,8 @@ COM =\
 	components/temperature\
 	components/uptime\
 	components/user
-
-#components/wifi
 #components/volume
+#components/wifi
 
 all: slstatus
 

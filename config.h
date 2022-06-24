@@ -1,10 +1,13 @@
 /* See LICENSE file for copyright and license details. */
 
 /* interval between updates (in ms) */
-const unsigned int interval = 1000;
+const unsigned int interval = 500;
 
 /* text to show if no value can be retrieved */
 static const char unknown_str[] = "n/a";
+
+static const char volume_cmd[] = "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1";
+
 
 /* maximum output string length */
 #define MAXLEN 2048
@@ -65,5 +68,12 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ datetime, "%s",           "%F %T" },
+
+
+        { disk_free, 	"   %s",       "/"     	 },
+	{ ram_perc, 	" |  %s%%",    NULL 		 },
+	{ cpu_perc, 	" |  %s%%",    NULL		 },
+	{ battery_perc, " |  %s%%",   	"BAT0"  	 },
+	{ vol_perc, 	" |  %s",      "/dev/mixer"	 },
+	{ datetime, 	" | %s",        "%F %T" 	 },
 };
