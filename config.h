@@ -6,7 +6,7 @@ const unsigned int interval = 500;
 /* text to show if no value can be retrieved */
 static const char unknown_str[] = "n/a";
 
-static const char volume_cmd[] = "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1";
+static const char volume_cmd[] = "~/.config/slstatus/scripts/volume.sh";
 
 
 /* maximum output string length */
@@ -67,13 +67,12 @@ static const char volume_cmd[] = "amixer sget Master | awk -F\"[][]\" '/%/ { pri
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
  */
 static const struct arg args[] = {
-	/* function format          argument */
+	/* function 	format         	argument */
 
-
-        { disk_free, 	"   %s",       "/"     	 },
-	{ ram_perc, 	" |  %s%%",    NULL 		 },
-	{ cpu_perc, 	" |  %s%%",    NULL		 },
-	{ battery_perc, " |  %s%%",   	"BAT0"  	 },
-	{ vol_perc, 	" |  %s",      "/dev/mixer"	 },
-	{ datetime, 	" | %s",        "%F %T" 	 },
+    { disk_free, 	"   %s",       "/"     	 	},
+	{ ram_perc, 	" |  %s%%",    NULL 		 	},
+	{ cpu_perc, 	" |  %s%%",    NULL		 	},
+	{ battery_perc, " |  %s%%",   	"BAT0"  	 	},
+	{ run_command, 	" |  %s",      volume_cmd	 	},
+	{ datetime, 	" | %s",        "%F %T" 	 	},
 };
