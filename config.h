@@ -67,12 +67,13 @@ static const char volume_cmd[] = "~/.config/slstatus/scripts/volume.sh";
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
  */
 static const struct arg args[] = {
-	/* function 	format         	argument */
+    /* function     format          argument */
 
-    { disk_free, 	"   %s",       "/"     	 	},
-	{ ram_perc, 	" |  %s%%",    NULL 		 	},
-	{ cpu_perc, 	" |  %s%%",    NULL		 	},
-	{ battery_perc, " |  %s%%",   	"BAT0"  	 	},
-	{ run_command, 	" |  %s",      volume_cmd	 	},
-	{ datetime, 	" | %s",        "%F %T" 	 	},
+    { disk_free,    "   %s",       "/"             },
+    { ram_perc,     " |  %s%%",    NULL            },
+    { cpu_perc,     " |  %s%%",    NULL            },
+    { run_command,  " |  %s",      volume_cmd      },
+    { power_profile," | %s",        NULL            },
+    { battery_perc, "  %s%%",      "BAT0"          },
+    { datetime,     " | %s",        "%F %T"         },
 };

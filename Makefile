@@ -25,7 +25,8 @@ COM =\
 	components/swap\
 	components/temperature\
 	components/uptime\
-	components/user
+	components/user\
+	components/power_profile
 #components/volume
 #components/wifi
 
