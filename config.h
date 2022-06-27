@@ -74,6 +74,7 @@ static const struct arg args[] = {
     { cpu_perc,     " |  %s%%",    NULL            },
     { run_command,  " |  %s",      volume_cmd      },
     { power_profile," | %s",        NULL            },
-    { battery_perc, "  %s%%",      "BAT0"          },
+    { battery_perc, "  %s%%",      "BAT0"         },
+    { wifi_essid,   " |  %s",        "wlo1"        },
     { datetime,     " | %s",        "%F %T"         },
 };
