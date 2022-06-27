@@ -25,7 +25,7 @@ const char* power_profile(void)
     else if (!strcmp(buffer, "balanced\n"))
         res = "";
     else if (!strcmp(buffer, "power-saver\n"))
-        res = "";
+        res = "\x04\x01";
     else
         warn("power_profile(): unable to parse output: '%s'", buffer);
 
